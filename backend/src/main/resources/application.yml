@@ -1,0 +1,14 @@
+server:
+  port: ${SERVER_PORT:8083}
+
+logging:
+  level:
+    root: info
+  logback:
+    rollingpolicy:
+      file-name-pattern: MyApp-%d{yyyy-MM-dd}.%i.log
+  file:
+    path: logs
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -%X{transaction.id} %msg%n"
